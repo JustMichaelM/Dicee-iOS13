@@ -14,20 +14,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceSix")
-//        diceImageView1.alpha = 0.5
-        
-        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceTwo")
+
         
     }
 
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        diceImageView1.image = UIImage(imageLiteralResourceName: "DiceFour")
+        let diceRolls: [String] = ["DiceOne","DiceTwo","DiceThree","DiceFour","DiceFive","DiceSix"]
         
-        diceImageView2.image = UIImage(imageLiteralResourceName: "DiceFour")
-        
-        print("The result of 2+3 is = \(2+3)")
+        diceImageView1.image = UIImage(named: diceRolls.randomElement()!)
+        diceImageView2.image = UIImage(named: diceRolls.randomElement()!)
     }
     
 }
